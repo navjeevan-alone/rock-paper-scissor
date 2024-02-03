@@ -1,14 +1,16 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
 .container {
-  width: 45%;
-  min-width: 500px;
+  width: clamp(300px, 98vw, 500px);
+  margin: auto;
   background-color: #ffffff;
-  padding: 40px 30px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  padding: 1rem 1.5rem;
   border-radius: 10px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ccc;
 }
 .satisfy-regular {
   font-family: "Satisfy", cursive;
@@ -30,9 +32,10 @@
   margin: auto;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .weapons button {
-  background-color:#292929;
+  background-color: #292929;
   color: #000000;
   border: none;
   font-size: 50px;
@@ -40,8 +43,16 @@
   width: 100px;
   border-radius: 50%;
   outline: none;
-  cursor: pointer;
   user-select: none;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.weapons button:hover {
+  transform: scale(1.1); /* Scales the button by 10% on hover */
+}
+
+.weapons button:focus {
+  animation: bounce 0.6s ease forwards; /* Applies the bounce animation on focus */
 }
 .details {
   margin-top: 30px;
@@ -52,13 +63,6 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 15px;
-}
-#result {
-  width: 180px;
-  padding: 10px 0;
-  margin: 30px auto;
-  font-weight: 600;
-  letter-spacing: 0.5px;
 }
 #user_choice,
 #computer_choice {
@@ -77,24 +81,14 @@ span {
 .details #result {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: #f1f1f1;
+  background: #292929;
   padding: 10px;
   border-radius: 5px; /* Optional: Adds rounded corners to the result box */
   text-align: center;
+  margin-bottom: 0;
+  transition: .25s;
 }
-.weapons button {
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-}
-
-.weapons button:hover {
-  transform: scale(1.1); /* Scales the button by 10% on hover */
-}
-
-.weapons button:focus {
-  animation: bounce 0.6s ease forwards; /* Applies the bounce animation on focus */
-}
-
 @keyframes bounce {
   0%,
   100% {
@@ -106,3 +100,13 @@ span {
     background: #ac83f2;
   }
 }
+
+/* media queries */
+/* @media (max-width: 370px) {
+  .weapons {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+} */
