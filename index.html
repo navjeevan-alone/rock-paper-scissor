@@ -13,32 +13,45 @@
 
     <script src="index.js" defer></script>
   </head>
+
   <body>
-    <body>
-      <div class="container">
-        <h1 class="satisfy-regular">Rock Paper Scissors</h1>
-        <div class="scores">
-          <p>Bot : <span id="computer_score">0</span></p>
-          <p>Me : <span id="user_score">0</span></p>
-        </div>
-        <div class="weapons">
-          <button
-            onclick="checker('rock');setTimeout(() => {
+    <audio id="win-sound">
+      <source src="./assets/sounds/win.mp3" type="audio/mp3" />
+      Your browser does n./ot support the audio element.
+    </audio>
+    <audio id="lose-sound">
+      <source src="./assets/sounds/lose.mp3" type="audio/mp3" />
+      Your browser does n./ot support the audio element.
+    </audio>
+    <audio id="draw-sound">
+      <source src="./assets/sounds/draw.mp3" type="audio/mp3" />
+      Your browser does n./ot support the audio element.
+    </audio>
+
+    <div class="container">
+      <h1 class="satisfy-regular">Rock Paper Scissors</h1>
+      <div class="scores">
+        <p>Bot : <span id="computer_score">0</span></p>
+        <span style="font-size: 2rem">V/S</span>
+        <p>Me : <span id="user_score">0</span></p>
+      </div>
+      <div class="weapons">
+        <button
+          onclick="checker('rock');setTimeout(() => {
             this.blur();
         }, 600);">
-            ✊
-          </button>
-          <button onclick="checker('paper')">✋</button>
-          <button onclick="checker('scissors')">✌️</button>
-        </div>
-        <div class="details">
-          <div class="choices">
-            <p><strong>Me:</strong> <span id="user_choice"></span></p>
-            <p><strong>Bot:</strong> <span id="comp_choice"></span></p>
-          </div>
-          <p id="result">Result</p>
-        </div>
+          ✊
+        </button>
+        <button onclick="checker('paper')">✋</button>
+        <button onclick="checker('scissors')">✌️</button>
       </div>
-    </body>
+      <div class="details">
+        <div class="choices">
+          <p><strong>Me:</strong> <span id="user_choice"></span></p>
+          <p><strong>Bot:</strong> <span id="comp_choice"></span></p>
+        </div>
+        <p id="result">Result</p>
+      </div>
+    </div>
   </body>
 </html>

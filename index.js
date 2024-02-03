@@ -16,6 +16,11 @@ const computerScoreElement = document.getElementById('computer_score');
 const userChoiceElement = document.getElementById('user_choice');
 const compChoiceElement = document.getElementById('comp_choice');
 const resultDisplay = document.getElementById('result');
+let winSound = document.getElementById("win-sound");
+let loseSound = document.getElementById("lose-sound");
+let drawSound = document.getElementById("draw-sound");
+
+
 
 function getComputerChoice() {
     const choices = Object.keys(options);
@@ -50,12 +55,20 @@ function displayChoices(userChoice, computerChoice) {
 
 function displayResult(winner) {
     if (winner === 'user') {
+        winSound.currentTime = 0;
+        winSound.play();
         resultDisplay.textContent = 'You Win!';
         resultDisplay.style.backgroundColor = colors.danger; // Green for win
+ 
     } else if (winner === 'computer') {
+        loseSound.currentTime = 0;
+        loseSound.play();
         resultDisplay.textContent = 'You Lose!';
         resultDisplay.style.backgroundColor = colors.success; // Red for lose
+        
     } else {
+        drawSound.currentTime = 0;
+        drawSoundSound.play();
         resultDisplay.textContent = 'It\'s a Draw!';
         resultDisplay.style.backgroundColor = colors.dark; // Grey for draw
     }
