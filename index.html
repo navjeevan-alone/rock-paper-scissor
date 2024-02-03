@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rock Paper Scissors Game</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<h1 class="satisfy-regular">Rock Paper Scissors Game</h1>
+<div class="scores">
+<p>Computer : <span id="computer_score">0</span></p>
+<p>You : <span id="user_score">0</span></p>
+</div>
+<div class="weapons">
+<button onclick="checker('rock')">✊</button>
+<button onclick="checker('paper')">✋</button>
+<button onclick="checker('scissor')">✌️</button>
+</div>
+<div class="details">
+    <div class="choices" style="display: flex; justify-content: space-between;">
+        <p><strong>User Choice:</strong> <span id="user_choice"></span></p>
+        <p><strong>Comp Choice:</strong> <span id="comp_choice"></span></p>
+    </div>
+    <p id="result" style="font-size: 24px;color:white;">Result</p>
+</div>
+</div>
+<script src="index.js"></script>
+</body>
+</html
